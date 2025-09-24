@@ -1,0 +1,209 @@
+body {
+  margin: 0;
+  font-family: 'Share Tech Mono', monospace;
+  background-color: #0d0d0d;
+  color: #e0e0e0;
+  text-align: center;
+}
+
+h1 {
+  color: #ff0000;
+  text-shadow: 0 0 0.625rem #fa2727;
+  font-size: 2.5rem;
+  margin-top: 3.75rem;
+}
+
+button {
+  background-color: #ff0000;
+  color: #0d0d0d;
+  border: none;
+  padding: 0.625rem 1.25rem;
+  font-size: 1rem;
+  margin-top: 1.25rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.625rem #ff0000;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #e60000;
+}
+#tsparticles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #0d0d0d;
+  box-shadow: 0 0 0.625rem #ff0000;
+  z-index: 1000;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0.625rem;
+  margin: 0;
+}
+
+.navbar li {
+  margin: 0 0.9375rem;
+}
+
+.navbar a {
+  color: #ff0000;
+  text-decoration: none;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+  position: relative;
+  display: inline-block;
+  padding: 0.125rem 0.25rem;
+  transition: color 0.25s ease, transform 0.18s ease;
+  will-change: color, transform;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -0.3125rem;
+  width: 60%;
+  height: 2px;
+  background: #ff0000;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  transition: transform 0.25s ease;
+  border-radius: 2px;
+}
+
+.navbar a:hover,
+.navbar a:focus {
+  color: #ffffff;
+  transform: translateY(-0.1875rem);
+}
+
+.navbar a:hover::after,
+.navbar a:focus::after {
+  transform: translateX(-50%) scaleX(1);
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* responsive / mobile improvements */
+html { font-size: 16px; }
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 3.5rem);
+  padding: 1.25rem;
+  box-sizing: border-box;
+  gap: 0.75rem;
+  
+}
+.intro h1 {
+  font-size: clamp(1.5rem, 6vw, 2.5rem);
+  margin-top: 0;
+  line-height: 1.05;
+}
+.intro p {
+  font-size: clamp(0.9rem, 3.2vw, 1.1rem);
+  margin: 0;
+  opacity: 0.95;
+}
+
+/* improve tap targets and readability */
+button {
+  min-height: 2.75rem;
+  min-width: 3rem;
+  padding: 0.625rem 1.25rem;
+  font-size: clamp(0.95rem, 3.5vw, 1rem);
+}
+
+.navbar {
+  padding: 0.25rem 0;
+    
+}
+.navbar ul {
+  gap: 0.5rem;
+}
+
+/* keyboard and focus accessibility */
+a:focus, button:focus {
+  outline: 3px solid rgba(255, 0, 0, 0.6);
+  outline-offset: 3px;
+}
+
+/* reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto;
+  }
+}
+
+/* mobile layout: move navbar to bottom and increase sizes */
+@media (max-width: 600px) {
+  .navbar {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(13, 13, 13, 0.96);
+    box-shadow: 0 -0.5rem 1.125rem rgba(255, 0, 0, 0.12);
+    z-index: 1000;
+  }
+  .navbar ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5rem;
+    margin: 0;
+  }
+  .navbar a {
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
+    display: block;
+    min-height: 2.75rem;
+    min-width: 3.5rem;
+    line-height: 1.1;
+  }
+  .intro {
+    min-height: calc(100vh - 4.25rem);
+    padding-bottom: 4.75rem; /* ensure content not hidden behind navbar */
+  }
+  button {
+    width: min(90%, 420px);
+  }
+}
+
+/* ensure content order for screen readers */
+.intro, .navbar { -webkit-tap-highlight-color: transparent; }
+.btn{
+  background-color: #ff0000;
+  color: #0d0d0d;
+  border: none;
+  padding: 0.325rem 0.75rem;
+  font-size: 1rem;
+  margin-top: 1.25rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.625rem #ff0000;
+  transition: background-color 0.3s ease;
+}
+.btn:hover {
+  background-color: #e60000;
+}
+
